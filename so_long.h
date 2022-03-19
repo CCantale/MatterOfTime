@@ -7,8 +7,7 @@
 
 # include <fcntl.h>
 # include "libft/libft.h"
-# include "minilinuX/mlx.h"
-# include "minilinuX/mlx_int.h"
+# include "minilibX/mlx.h"
 # include "keys.h"
 
 typedef struct game

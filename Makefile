@@ -6,7 +6,7 @@
 #    By: ccantale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 15:39:12 by ccantale          #+#    #+#              #
-#    Updated: 2022/03/18 18:28:03 by ccantale         ###   ########.fr        #
+#    Updated: 2022/03/19 20:13:53 by ccantale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ FLAGS		= -Wall -Wextra -Werror
 NAME		= so_long
 
 FILES		= so_long.c \
-			  ft_check_map.c \
 			  quit.c \
 			  error.c \
 			  loop.c \
-			  get_xml.c \
-			  move.c
+			  get_xpm.c \
+			  move.c \
+			  get_level.c
 
 LIBFT		= libft/libft.a
 MINI		= minilibX/libmlx.dylib
