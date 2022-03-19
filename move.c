@@ -7,6 +7,8 @@ void	move_u(t_game *game)
 
 	x = game->player_x;
 	y = game->player_y;
+	if (game->map[y - 1][x] == 'C')
+		game->sand = 5 - game->sand;
 	if (game->map[y - 1][x] != '1' && game->map[y - 1][x] != 'E')
 	{
 		game->map[y][x] = ' ';
@@ -14,9 +16,11 @@ void	move_u(t_game *game)
 		put_whatever(game, y, x);
 		put_whatever(game, y - 1, x);
 	}
-	if (game->map[y - 1][x] == 'E')
-		if (scan_for_coll(game->map))
-			quit(game);
+	else if (game->map[y - 1][x] == 'E')
+	{
+		game->level++;
+		game->start = 0;
+	}
 }
 
 void	move_d(t_game *game)
@@ -26,6 +30,8 @@ void	move_d(t_game *game)
 
 	x = game->player_x;
 	y = game->player_y;
+	if (game->map[y + 1][x] == 'C')
+		game->sand = 5 - game->sand;
 	if (game->map[y + 1][x] != '1' && game->map[y + 1][x] != 'E')
 	{
 		game->map[y][x] = ' ';
@@ -33,9 +39,11 @@ void	move_d(t_game *game)
 		put_whatever(game, y, x);
 		put_whatever(game, y + 1, x);
 	}
-	if (game->map[y + 1][x] == 'E')
-		if (scan_for_coll(game->map))
-			quit(game);
+	else if (game->map[y + 1][x] == 'E')
+	{
+		game->level++;
+		game->start = 0;
+	}
 }
 
 void	move_l(t_game *game)
@@ -45,6 +53,8 @@ void	move_l(t_game *game)
 
 	x = game->player_x;
 	y = game->player_y;
+	if (game->map[y][x - 1] == 'C')
+		game->sand = 5 - game->sand;
 	if (game->map[y][x - 1] != '1' && game->map[y][x - 1] != 'E')
 	{
 		game->map[y][x] = ' ';
@@ -52,9 +62,11 @@ void	move_l(t_game *game)
 		put_whatever(game, y, x);
 		put_whatever(game, y, x - 1);
 	}
-	if (game->map[y][x - 1] == 'E')
-		if (scan_for_coll(game->map))
-			quit(game);
+	else if (game->map[y][x - 1] == 'E')
+	{
+		game->level++;
+		game->start = 0;
+	}
 }
 
 void	move_r(t_game *game)
@@ -64,6 +76,8 @@ void	move_r(t_game *game)
 
 	x = game->player_x;
 	y = game->player_y;
+	if (game->map[y][x + 1] == 'C')
+		game->sand = 5 - game->sand;
 	if (game->map[y][x + 1] != '1' && game->map[y][x + 1] != 'E')
 	{
 		game->map[y][x] = ' ';
@@ -71,13 +85,16 @@ void	move_r(t_game *game)
 		put_whatever(game, y, x);
 		put_whatever(game, y, x + 1);
 	}
-	if (game->map[y][x + 1] == 'E')
-		if (scan_for_coll(game->map))
-			quit(game);
+	else if (game->map[y][x + 1] == 'E')
+	{
+		game->level++;
+		game->start = 0;
+	}
 }
 
 void	move(t_game *game, int key)
 {
+	game->sand++;
 	if (key == UP)
 		move_u(game);
 	if (key == DOWN)
@@ -86,8 +103,7 @@ void	move(t_game *game, int key)
 		move_l(game);
 	if (key == RIGHT)
 		move_r(game);
-	game->player_sand++;
-	if (game->player_sand > 5)
-		game->player_sand = 0;
+	if (game->sand >= 5)
+		quit(game);
 		
 }

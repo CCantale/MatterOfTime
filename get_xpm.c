@@ -21,7 +21,17 @@ int	get_player(t_game *game)
 
 	x = 64;
 	y = 56;
-	game->player = mlx_xpm_file_to_image(game->init,
+	game->player[0] = mlx_xpm_file_to_image(game->init,
+		"sprites/sandy0.xpm", &x, &y);
+	game->player[1] = mlx_xpm_file_to_image(game->init,
+		"sprites/sandy1.xpm", &x, &y);
+	game->player[2] = mlx_xpm_file_to_image(game->init,
+		"sprites/sandy2.xpm", &x, &y);
+	game->player[3] = mlx_xpm_file_to_image(game->init,
+		"sprites/sandy3.xpm", &x, &y);
+	game->player[4] = mlx_xpm_file_to_image(game->init,
+		"sprites/sandy4.xpm", &x, &y);
+	game->player[5] = mlx_xpm_file_to_image(game->init,
 		"sprites/sandy5.xpm", &x, &y);
 	if (!game->player)
 		return (1);
@@ -66,7 +76,7 @@ int	get_walls(t_game *game)
 	return (0);
 }
 
-int	get_xml(t_game *game)
+int	get_xpm(t_game *game)
 {
 	int	i;
 

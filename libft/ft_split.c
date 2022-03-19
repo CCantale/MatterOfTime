@@ -79,9 +79,12 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[end] == c)
 		{
-			split = allocate_and_copy(split, s + beg, end - beg + 1, &row);
-			if (!split)
-				return (NULL);
+			if (beg != end)
+			{
+				split = allocate_and_copy(split, s + beg, end - beg + 1, &row);
+				if (!split)
+					return (NULL);
+			}
 			beg = end + 1;
 		}
 		++end;

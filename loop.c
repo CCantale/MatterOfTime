@@ -13,7 +13,7 @@ void	put_background(t_game *game)
 		{
 			if (game->map[i][j] == ' ')
 				mlx_put_image_to_window(game->init, game->win,
-					game->background, j * 64, i * 64);
+					game->background, j * 64 + game->x_start, i * 64 + game->y_start);
 			++j;
 		}
 		++i;
@@ -24,8 +24,8 @@ void	put_sprites(t_game *game, int i, int j)
 {
 	if (game->map[i][j] == 'P')
 	{
-		mlx_put_image_to_window(game->init, game->win,
-			game->player, j * 64, i * 64 + 8);
+		mlx_put_image_to_window(game->init, game->win, game->player[game->sand],
+			j * 64 + game->x_start, i * 64 + 8 + game->y_start);
 		game->player_x = j;
 		game->player_y = i;
 		if (game->map[i + 1][j] == '1')
@@ -33,14 +33,14 @@ void	put_sprites(t_game *game, int i, int j)
 	}
 	if (game->map[i][j] == 'E')
 		mlx_put_image_to_window(game->init, game->win,
-			game->o_door, j * 64, i * 64 + 8);
+			game->o_door, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
 	if (game->map[i][j] == 'C')
 		mlx_put_image_to_window(game->init, game->win,
-			game->turner, j * 64, i * 64 + 8);
+			game->turner, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
 	if (game->map[i][j] == ' ' && game->start != 0)
 	{
 		mlx_put_image_to_window(game->init, game->win,
-			game->background, j * 64, i * 64);
+			game->background, j * 64 + game->x_start, i * 64 + game->y_start);
 		if (game->map[i - 1][j] == '1' || game->map[i - 1][j] == 'E')
 			put_whatever(game, i - 1, j);
 		if (game->map[i + 1][j] == '1')
@@ -54,17 +54,17 @@ void	put_whatever(t_game *game, int i, int j)
 	{
 		if (game->map[i - 1][j] == 'P')
 			mlx_put_image_to_window(game->init, game->win,
-				game->s_block, j * 64, i * 64);
+				game->s_block, j * 64 + game->x_start, i * 64 + game->y_start);
 		else if (game->map[i - 1][j] == 'C')
 			mlx_put_image_to_window(game->init, game->win,
-				game->t_block, j * 64, i * 64);
+				game->t_block, j * 64 + game->x_start, i * 64 + game->y_start);
 		else
 			mlx_put_image_to_window(game->init, game->win,
-				game->out_block, j * 64, i * 64);
+				game->out_block, j * 64 + game->x_start, i * 64 + game->y_start);
 	}
 	else if (game->map[i][j] == '1')
 		mlx_put_image_to_window(game->init, game->win,
-			game->out_block, j * 64, i * 64);
+			game->out_block, j * 64 + game->x_start, i * 64 + game->y_start);
 	else
 		put_sprites(game, i, j);
 	if (i && game->start != 0 && game->map[i][j] == '1'
@@ -95,6 +95,8 @@ int	update(t_game *game)
 {
 	if (game->start == 0)
 	{
+		get_level(game);
+		mlx_clear_window(game->init, game->win);
 		put_start(game);
 		game->start = 1;
 	}

@@ -36,27 +36,22 @@ int	ft_get_key(int key, t_game *game)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	t_game	game;
 
-	if (argc != 2)
-		return (error_int("Insert one map\n"));
 	game.init = mlx_init();
 	if(!game.init)
 		return (error_int("Game doesn't init\n"));
-	if (ft_check_map(&game, argv[1]))
-		game.win = mlx_new_window(game.init, game.map_x * 64,
-			game.map_y * 64 + 8, GAME_NAME);
-	else
-		return (0);
+	if (get_xpm(&game))
+		return (error_int("images not correctly loaded"));
+	game.win = mlx_new_window(game.init, WINDOW_X,
+		WINDOW_Y, GAME_NAME);
 	if (!game.win)
 	{
 		quit(&game);
 		return (error_int("Window doesn't init\n"));
 	}
-	if (get_xml(&game))
-		return (error_int("images not correctly loaded"));
 	mlx_key_hook(game.win, ft_get_key, &game);
 	mlx_loop_hook(game.init, update, &game);
 	mlx_loop(game.init);
