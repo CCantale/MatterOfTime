@@ -1,4 +1,4 @@
-#ifndef "KEYS_H"
+#ifndef KEYS_H
 # define KEYS_H
 
 # define UP		13
