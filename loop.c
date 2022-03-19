@@ -100,5 +100,7 @@ int	update(t_game *game)
 		put_start(game);
 		game->start = 1;
 	}
+	if (game->sand >=5)
+		quit(game);
 	return (1);
 }

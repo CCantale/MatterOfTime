@@ -97,13 +97,11 @@ void	move(t_game *game, int key)
 	game->sand++;
 	if (key == UP)
 		move_u(game);
-	if (key == DOWN)
+	else if (key == DOWN)
 		move_d(game);
-	if (key == LEFT)
+	else if (key == LEFT)
 		move_l(game);
-	if (key == RIGHT)
+	else if (key == RIGHT)
 		move_r(game);
-	if (game->sand >= 5)
-		quit(game);
 		
 }
