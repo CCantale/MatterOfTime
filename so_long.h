@@ -7,8 +7,7 @@
 
 # include <fcntl.h>
 # include "libft/libft.h"
-# include "minilibX/mlx.h"
-# include "keys.h"
+# include "keys_and_mlx.h"
 
 typedef struct game
 {
@@ -24,6 +23,8 @@ typedef struct game
 	void	*player[6];
 	int		player_x;
 	int		player_y;
+	int		backwards_x;
+	int		backwards_y;
 	int		sand;
 	void	*out_block;
 	void	*s_block;

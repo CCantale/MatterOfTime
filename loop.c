@@ -11,7 +11,7 @@ void	put_background(t_game *game)
 		j = 0;
 		while (game->map[i][j])
 		{
-			if (game->map[i][j] == ' ')
+			if (game->map[i][j] == ' ' || game->map[i][j] == 'B')
 				mlx_put_image_to_window(game->init, game->win,
 					game->background, j * 64 + game->x_start, i * 64 + game->y_start);
 			++j;
@@ -37,7 +37,7 @@ void	put_sprites(t_game *game, int i, int j)
 	if (game->map[i][j] == 'C')
 		mlx_put_image_to_window(game->init, game->win,
 			game->turner, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
-	if (game->map[i][j] == ' ' && game->start != 0)
+	if ((game->map[i][j] == ' ' || game->map[i][j] == 'B') && game->start != 0)
 	{
 		mlx_put_image_to_window(game->init, game->win,
 			game->background, j * 64 + game->x_start, i * 64 + game->y_start);
@@ -99,6 +99,9 @@ int	update(t_game *game)
 		mlx_clear_window(game->init, game->win);
 		put_start(game);
 		game->start = 1;
+		game->sand = 0;
+		game->backwards_x = 0;
+		game->backwards_y = 0;
 	}
 	if (game->sand >=5)
 		quit(game);

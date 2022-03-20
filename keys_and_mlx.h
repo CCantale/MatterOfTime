@@ -7,4 +7,6 @@
 # define RIGHT		2
 # define KEY_ESC	53
 
+# include "minilibX/mlx"
+
 #endif
