@@ -12,25 +12,42 @@
 
 #include "so_long.h"
 
-int	ft_map_init(t_game *game, char **map)
+void	main_menu(t_game *game)
 {
-	if (!map)
+	game->start = 2;
+	mlx_clear_window(game->init, game->win);
+	if (game->menu == 0)
 	{
-		ft_printf("Error\nMap check failed\n");
-		return (0);
+		mlx_string_put(game->init, game->win, 300, 300, 0xFFFFFF, "> Play");
+		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "Exit");
 	}
-	game->map = map;
-	if (!game->init)
-		return (0);
-	return(1);
-}
+	else if (game->menu == 1)
+	{
+		mlx_string_put(game->init, game->win, 300, 300, 0xFFFFFF, "Play");
+		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "> Exit");
+	}
+}	
 
-int	ft_get_key(int key, t_game *game)
+
+int	get_key(int key, t_game *game)
 {
-	if (!game)
-		return (0);
-	if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
+	if (game->start != 2 && (key == UP || key == DOWN || key == LEFT || key == RIGHT))
 		move(game, key);
+	else if (game->start == 2 && (key == UP || key == DOWN))
+	{
+		game->menu = 1 - game->menu;
+		main_menu(game);
+	}
+	else if (game->start == 2 && key == ENTER)
+	{
+		if (game->menu == 0)
+		{
+			game->level = 0;
+			game->start = 0;
+		}
+		else if (game->menu == 1)
+			quit(game);
+	}
 	if (key == KEY_ESC)
 		quit(game);
 	return (0);
@@ -52,7 +69,8 @@ int	main(void)
 		quit(&game);
 		return (error_int("Window doesn't init\n"));
 	}
-	mlx_key_hook(game.win, ft_get_key, &game);
+	main_menu(&game);
+	mlx_key_hook(game.win, get_key, &game);
 	mlx_loop_hook(game.init, update, &game);
 	mlx_loop(game.init);
 	return (0);

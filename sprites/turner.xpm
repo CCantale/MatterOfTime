@@ -1,7 +1,7 @@
 /* XPM */
 static char *_693_85c176e3d402ea6f21aa71574b3282f74a69f6f2055b2c714c62d41639474eff[] = {
 /* columns rows colors chars-per-pixel */
-"64 56 216 2 ",
+"64 72 216 2 ",
 "   c #7C1A11",
 ".  c #7B1C22",
 "X  c #66222F",
@@ -220,6 +220,14 @@ static char *_693_85c176e3d402ea6f21aa71574b3282f74a69f6f2055b2c714c62d41639474e
 "eX c #E0AD92",
 /* pixels */
 "j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
 "j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
 "j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
 "j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.k.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.",
@@ -274,5 +282,13 @@ static char *_693_85c176e3d402ea6f21aa71574b3282f74a69f6f2055b2c714c62d41639474e
 "j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
 "j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
 "j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.f.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
-"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.k.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j."
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.k.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.",
+"j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.g.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j."
 };

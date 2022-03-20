@@ -20,6 +20,16 @@ void	put_background(t_game *game)
 	}
 }
 
+void	put_turner(t_game *game, int i, int j)
+{
+	mlx_put_image_to_window(game->init, game->win,
+		game->turner, j * 64 + game->x_start, i * 64 + game->y_start);
+	if (game->map[i - 1][j] == '1' || game->map[i - 1][j] == 'E')
+		put_whatever(game, i - 1, j);
+	if (game->map[i + 1][j] == '1')
+		put_whatever(game, i + 1, j);
+}
+
 void	put_sprites(t_game *game, int i, int j)
 {
 	if (game->map[i][j] == 'P')
@@ -35,8 +45,7 @@ void	put_sprites(t_game *game, int i, int j)
 		mlx_put_image_to_window(game->init, game->win,
 			game->o_door, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
 	if (game->map[i][j] == 'C')
-		mlx_put_image_to_window(game->init, game->win,
-			game->turner, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
+		put_turner(game, i, j);
 	if ((game->map[i][j] == ' ' || game->map[i][j] == 'B') && game->start != 0)
 	{
 		mlx_put_image_to_window(game->init, game->win,
@@ -103,7 +112,7 @@ int	update(t_game *game)
 		game->backwards_x = 0;
 		game->backwards_y = 0;
 	}
-	if (game->sand >=5)
-		quit(game);
+	if (game->start != 2 && game->sand >=5)
+		main_menu(game);
 	return (1);
 }

@@ -3,7 +3,7 @@
 
 # define GAME_NAME	"Matter of Time"
 # define WINDOW_X	640	
-# define WINDOW_Y	520
+# define WINDOW_Y	640
 
 # include <fcntl.h>
 # include "libft/libft.h"
@@ -14,6 +14,7 @@ typedef struct game
 	void	*init;
 	void	*win;
 	int		start;
+	int		menu;
 	int		level;
 	char	**map;
 	int		map_x;
@@ -44,5 +45,6 @@ void	put_whatever(t_game *game, int i, int j);
 void	move(t_game *game, int key);
 int		scan_for_coll(char **map);
 void	get_level(t_game *game);
+void	main_menu(t_game *game);
 
 #endif

@@ -70,6 +70,27 @@ static void	level3(t_game *game)
 	game->sand = 0;
 }
 
+static void	level4(t_game *game)
+{
+	char map[90];
+
+	ft_strlcpy(map,	"111111111\n"
+			"1D1K C  1\n"
+			"1 1  C  1\n"
+			"1 1J    1\n"
+			"1111 11C1\n"
+			"1 E     1\n"
+			"111 1 1 1\n"
+			"1P   C  1\n"
+			"111111111", 90);
+	game->map = ft_split(map, '\n');
+	game->map_x = 9;
+	game->map_y = 9;
+	game->x_start = (WINDOW_X - (game->map_x * 64)) / 2;
+	game->y_start = (WINDOW_Y - (game->map_y * 64 + 8)) / 2;
+	game->sand = 0;
+}
+
 void	get_level(t_game *game)
 {
 	if (game->level == 0)
@@ -80,6 +101,8 @@ void	get_level(t_game *game)
 		level2(game);
 	else if (game->level == 3)
 		level3(game);
+	else if (game->level == 4)
+		level4(game);
 	else
-		quit(game);
+		main_menu(game);
 }

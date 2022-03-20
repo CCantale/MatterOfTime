@@ -35,21 +35,23 @@ int	get_player(t_game *game)
 		"sprites/sandy5.xpm", &x, &y);
 	if (!game->player)
 		return (1);
-	game->turner = mlx_xpm_file_to_image(game->init,
-		"sprites/turner.xpm", &x, &y);
-	if (!game->turner)
-		return (1);
 	return (0);
 }
 
 int	get_background(t_game *game)
 {
-	int	size;
+	int	x;
+	int	y;
 
-	size = 64;
+	x = 64;
+	y = 72;
 	game->background = mlx_xpm_file_to_image(game->init,
-		"sprites/background.xpm", &size, &size);
+		"sprites/background.xpm", &x, &y);
 	if (!game->background)
+		return (1);
+	game->turner = mlx_xpm_file_to_image(game->init,
+		"sprites/turner.xpm", &x, &y);
+	if (!game->turner)
 		return (1);
 	return (0);
 }
