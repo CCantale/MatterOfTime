@@ -12,7 +12,7 @@ static void	level0(t_game *game)
 	game->map_y = 3;
 	game->x_start = (WINDOW_X - (game->map_x * 64)) / 2;
 	game->y_start = (WINDOW_Y - (game->map_y * 64 + 8)) / 2;
-	game->sand = 0;
+	game->sand = 0;	
 }
 
 static void	level1(t_game *game)
@@ -104,5 +104,5 @@ void	get_level(t_game *game)
 	else if (game->level == 4)
 		level4(game);
 	else
-		main_menu(game);
+		quit(game);
 }

@@ -6,7 +6,7 @@
 #    By: ccantale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 15:39:12 by ccantale          #+#    #+#              #
-#    Updated: 2022/03/19 20:13:53 by ccantale         ###   ########.fr        #
+#    Updated: 2022/03/21 15:53:56 by ccantale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ FILES		= so_long.c \
 			  loop.c \
 			  get_xpm.c \
 			  move.c \
-			  get_level.c
+			  get_level.c \
+			  intro.c
 
 LIBFT		= libft/libft.a
 MINI		= minilibX/libmlx.dylib
@@ -38,7 +39,7 @@ $(LIBFT): libft/
 	make -C libft
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit $(LIBFT) -o so_long
+	$(CC) $(FLAGS) -g $(OBJ) -lmlx -framework OpenGL -framework AppKit $(LIBFT) -o so_long
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $(FILES)

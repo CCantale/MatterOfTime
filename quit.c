@@ -22,16 +22,6 @@ int	scan_for_coll(char **map)
 
 void	quit(t_game *game)
 {
-	int		i;
-	char	**map;
-	
-	map = game->map;
-	i = 0;
-	while (map[i])
-	{
-		free(map[i]);
-		++i;
-	}
-	free(map);
+	free(game);
 	exit(0);
 }

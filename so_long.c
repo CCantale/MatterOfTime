@@ -6,7 +6,7 @@
 /*   By: ccantale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:42:38 by ccantale          #+#    #+#             */
-/*   Updated: 2022/03/18 17:50:51 by ccantale         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:01:15 by ccantale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,22 @@ void	main_menu(t_game *game)
 	mlx_clear_window(game->init, game->win);
 	if (game->menu == 0)
 	{
-		mlx_string_put(game->init, game->win, 300, 300, 0xFFFFFF, "> Play");
-		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "Exit");
+		mlx_string_put(game->init, game->win, 250, 250, 0xFFFFFF, "MATTER OF TIME");
+		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "> Play");
+		mlx_string_put(game->init, game->win, 300, 380, 0xFFFFFF, "Exit");
 	}
 	else if (game->menu == 1)
 	{
-		mlx_string_put(game->init, game->win, 300, 300, 0xFFFFFF, "Play");
-		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "> Exit");
+		mlx_string_put(game->init, game->win, 250, 250, 0xFFFFFF, "MATTER OF TIME");
+		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "Play");
+		mlx_string_put(game->init, game->win, 300, 380, 0xFFFFFF, "> Exit");
 	}
 }	
 
 
 int	get_key(int key, t_game *game)
 {
-	if (game->start != 2 && (key == UP || key == DOWN || key == LEFT || key == RIGHT))
+	if (game->start == 1 && (key == UP || key == DOWN || key == LEFT || key == RIGHT))
 		move(game, key);
 	else if (game->start == 2 && (key == UP || key == DOWN))
 	{
@@ -48,6 +50,11 @@ int	get_key(int key, t_game *game)
 		else if (game->menu == 1)
 			quit(game);
 	}
+	else if (game->start == 3 && key == ENTER)
+	{
+		game->start = 2;
+		main_menu(game);
+	}
 	if (key == KEY_ESC)
 		quit(game);
 	return (0);
@@ -55,23 +62,24 @@ int	get_key(int key, t_game *game)
 
 int	main(void)
 {
-	t_game	game;
+	t_game	*game;
 
-	game.init = mlx_init();
-	if(!game.init)
+	game = malloc(sizeof(t_game));
+	game->init = mlx_init();
+	if(!game->init)
 		return (error_int("Game doesn't init\n"));
-	if (get_xpm(&game))
+	if (get_xpm(game))
 		return (error_int("images not correctly loaded"));
-	game.win = mlx_new_window(game.init, WINDOW_X,
+	game->win = mlx_new_window(game->init, WINDOW_X,
 		WINDOW_Y, GAME_NAME);
-	if (!game.win)
+	if (!game->win)
 	{
-		quit(&game);
+		quit(game);
 		return (error_int("Window doesn't init\n"));
 	}
-	main_menu(&game);
-	mlx_key_hook(game.win, get_key, &game);
-	mlx_loop_hook(game.init, update, &game);
-	mlx_loop(game.init);
+	intro(game);
+	mlx_key_hook(game->win, get_key, game);
+	mlx_loop_hook(game->init, update, game);
+	mlx_loop(game->init);
 	return (0);
 }

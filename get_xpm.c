@@ -16,6 +16,7 @@ int	get_sprites(t_game *game)
 
 int	get_player(t_game *game)
 {
+	int	i;
 	int	x;
 	int	y;
 
@@ -33,8 +34,13 @@ int	get_player(t_game *game)
 		"sprites/sandy4.xpm", &x, &y);
 	game->player[5] = mlx_xpm_file_to_image(game->init,
 		"sprites/sandy5.xpm", &x, &y);
-	if (!game->player)
-		return (1);
+	i = 0;
+	while (i < 6)
+	{
+		if (!game->player[i])
+			return (1);
+		++i;
+	}
 	return (0);
 }
 
@@ -52,6 +58,14 @@ int	get_background(t_game *game)
 	game->turner = mlx_xpm_file_to_image(game->init,
 		"sprites/turner.xpm", &x, &y);
 	if (!game->turner)
+		return (1);
+	game->key = mlx_xpm_file_to_image(game->init,
+		"sprites/key.xpm", &x, &y);
+	if (!game->key)
+		return (1);
+	game->c_door = mlx_xpm_file_to_image(game->init,
+		"sprites/c_door.xpm", &x, &y);
+	if (!game->c_door)
 		return (1);
 	return (0);
 }

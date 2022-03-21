@@ -28,6 +28,8 @@ void	move_u(t_game *game)
 		game->level++;
 		game->start = 0;
 	}
+	else if (game->map[y - 1][x] == 'B')
+		game->warning = 1;
 }
 
 void	move_d(t_game *game)
@@ -58,6 +60,8 @@ void	move_d(t_game *game)
 		game->level++;
 		game->start = 0;
 	}
+	else if (game->map[y + 1][x] == 'B')
+		game->warning = 1;
 }
 
 void	move_l(t_game *game)
@@ -88,6 +92,8 @@ void	move_l(t_game *game)
 		game->level++;
 		game->start = 0;
 	}
+	else if (game->map[y][x - 1] == 'B')
+		game->warning = 1;
 }
 
 void	move_r(t_game *game)
@@ -118,6 +124,8 @@ void	move_r(t_game *game)
 		game->level++;
 		game->start = 0;
 	}
+	else if (game->map[y][x + 1] == 'B')
+		game->warning = 1;
 }
 
 void	move(t_game *game, int key)
