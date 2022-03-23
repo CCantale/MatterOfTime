@@ -2,24 +2,24 @@
 
 void	play_animation(t_game *game)
 {
-	int	i;
-	int	wait;
-
-	wait = 0;
-	i = 0;
-	while (i < 6 || wait < 10000)
+	if (game->time <= 900)
 	{
-		if (wait > 10000)
-		{
-			mlx_put_image_to_window(game->init, game->win, game->flip[i],
-				game->player_x * 64 + game->x_start, game->player_y * 64 + 8 + game->y_start);
-			wait = 0;
-			++i;
-		}
-		++wait;
+		game->time++;
 	}
-	game->sand = 5 - game->sand;
-	put_whatever(game, game->player_y, game->player_x);
-	game->animation = 0;
+	else if (game->animation > 0 && game->time > 900)
+	{
+		mlx_put_image_to_window(game->init, game->win, game->flip[game->animation - 1],
+			game->player_x * 64 + game->x_start, game->player_y * 64 + 8 + game->y_start);
+		game->time = 0;
+		game->animation++;
+		if (game->animation > 6)
+			game->animation = -1;
+	}
+	else if (game->animation == -1)
+	{
+		game->sand = 5 - game->sand;
+		put_whatever(game, game->player_y, game->player_x);
+		game->animation = 0;
+	}
 }
 

@@ -22,8 +22,6 @@ void	move_u(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
-		if (game->animation == 1)
-			play_animation(game);
 	}
 	else if (game->map[y - 1][x] == 'E')
 	{
@@ -56,8 +54,6 @@ void	move_d(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
-		if (game->animation == 1)
-			play_animation(game);
 	}
 	else if (game->map[y + 1][x] == 'E')
 	{
@@ -90,8 +86,6 @@ void	move_l(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
-		if (game->animation == 1)
-			play_animation(game);
 	}
 	else if (game->map[y][x - 1] == 'E')
 	{
@@ -124,8 +118,6 @@ void	move_r(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
-		if (game->animation == 1)
-			play_animation(game);
 	}
 	else if (game->map[y][x + 1] == 'E')
 	{

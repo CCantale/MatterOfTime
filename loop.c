@@ -142,10 +142,12 @@ int	update(t_game *game)
 		mlx_string_put(game->init, game->win, 80, 730, 0x000000, "Time never walks backwards!");
 		}
 	}
-	if (game->start != 2 && game->sand >=5)
+	if (game->start != 2 && game->sand >=5 && game->animation == 0)
 	{
 		game->warning = 0;
 		main_menu(game);
 	}
+	if (game->animation > 0 || game->animation == -1)
+		play_animation(game);
 	return (1);
 }

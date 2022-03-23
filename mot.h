@@ -18,6 +18,7 @@ typedef struct game
 	int		warning;
 	int		menu;
 	int		level;
+	int		time;
 	char	**map;
 	int		map_x;
 	int		map_y;

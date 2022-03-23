@@ -32,17 +32,17 @@ int	get_player(t_game *game)
 	x = 64;
 	y = 56;
 	game->player[0] = mlx_xpm_file_to_image(game->init,
-		"sprites/sandy0.xpm", &x, &y);
+		"sprites/time0.xpm", &x, &y);
 	game->player[1] = mlx_xpm_file_to_image(game->init,
-		"sprites/sandy1.xpm", &x, &y);
+		"sprites/time1.xpm", &x, &y);
 	game->player[2] = mlx_xpm_file_to_image(game->init,
-		"sprites/sandy2.xpm", &x, &y);
+		"sprites/time2.xpm", &x, &y);
 	game->player[3] = mlx_xpm_file_to_image(game->init,
-		"sprites/sandy3.xpm", &x, &y);
+		"sprites/time3.xpm", &x, &y);
 	game->player[4] = mlx_xpm_file_to_image(game->init,
-		"sprites/sandy4.xpm", &x, &y);
+		"sprites/time4.xpm", &x, &y);
 	game->player[5] = mlx_xpm_file_to_image(game->init,
-		"sprites/sandy5.xpm", &x, &y);
+		"sprites/time5.xpm", &x, &y);
 	i = 0;
 	while (i < 6)
 	{
