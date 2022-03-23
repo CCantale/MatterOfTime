@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "mot.h"
 
 static void	level0(t_game *game)
 {

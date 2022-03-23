@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "mot.h"
 
 void	*error_msg(char *msg)
 {
