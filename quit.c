@@ -1,6 +1,6 @@
-#include "so_long.h"
+#include "mot.h"
 
-int	scan_for_coll(char **map)
+/*int	scan_for_coll(char **map)
 {
 	int	i;
 	int	j;
@@ -18,7 +18,7 @@ int	scan_for_coll(char **map)
 		++i;
 	}
 	return (1);
-}
+} */
 
 void	quit(t_game *game)
 {

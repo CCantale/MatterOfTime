@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ccantale <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 16:42:38 by ccantale          #+#    #+#             */
-/*   Updated: 2022/03/21 18:01:15 by ccantale         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "so_long.h"
+#include "mot.h"
 
 void	main_menu(t_game *game)
 {
@@ -33,7 +21,7 @@ void	main_menu(t_game *game)
 
 int	get_key(int key, t_game *game)
 {
-	if (game->start == 1 && (key == UP || key == DOWN || key == LEFT || key == RIGHT))
+	if (game->start == 1 && game->animation == 0 && (key == UP || key == DOWN || key == LEFT || key == RIGHT))
 		move(game, key);
 	else if (game->start == 2 && (key == UP || key == DOWN))
 	{

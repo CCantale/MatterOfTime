@@ -1,5 +1,5 @@
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef MOT_H
+# define MOT_H
 
 # define GAME_NAME	"Matter of Time"
 # define WINDOW_X	640	
@@ -23,12 +23,14 @@ typedef struct game
 	int		map_y;
 	int		x_start;
 	int		y_start;
+	int		animation;
 	void	*player[6];
 	int		player_x;
 	int		player_y;
 	int		backwards_x;
 	int		backwards_y;
 	int		sand;
+	void	*flip[6];
 	void	*out_block;
 	void	*s_block;
 	void	*t_block;
@@ -51,5 +53,6 @@ int		scan_for_coll(char **map);
 void	get_level(t_game *game);
 void	main_menu(t_game *game);
 void	intro(t_game *game);
+void	play_animation(t_game *game);
 
 #endif

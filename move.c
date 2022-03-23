@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "mot.h"
 
 void	move_u(t_game *game)
 {
@@ -12,7 +12,7 @@ void	move_u(t_game *game)
 	{
 		game->sand++;
 		if (game->map[y - 1][x] == 'C')
-			game->sand = 5 - game->sand;
+			game->animation = 1;
 		game->map[y][x] = 'B';
 		game->map[y - 1][x] = 'P';
 		if (game->backwards_x && game->backwards_y)
@@ -22,6 +22,8 @@ void	move_u(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
+		if (game->animation == 1)
+			play_animation(game);
 	}
 	else if (game->map[y - 1][x] == 'E')
 	{
@@ -44,7 +46,7 @@ void	move_d(t_game *game)
 	{
 		game->sand++;
 		if (game->map[y + 1][x] == 'C')
-			game->sand = 5 - game->sand;
+			game->animation = 1;
 		game->map[y][x] = 'B';
 		game->map[y + 1][x] = 'P';
 		if (game->backwards_x && game->backwards_y)
@@ -54,6 +56,8 @@ void	move_d(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
+		if (game->animation == 1)
+			play_animation(game);
 	}
 	else if (game->map[y + 1][x] == 'E')
 	{
@@ -76,7 +80,7 @@ void	move_l(t_game *game)
 	{
 		game->sand++;
 		if (game->map[y][x - 1] == 'C')
-			game->sand = 5 - game->sand;
+			game->animation = 1;
 		game->map[y][x] = 'B';
 		game->map[y][x - 1] = 'P';
 		if (game->backwards_x && game->backwards_y)
@@ -86,6 +90,8 @@ void	move_l(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
+		if (game->animation == 1)
+			play_animation(game);
 	}
 	else if (game->map[y][x - 1] == 'E')
 	{
@@ -108,7 +114,7 @@ void	move_r(t_game *game)
 	{
 		game->sand++;
 		if (game->map[y][x + 1] == 'C')
-			game->sand = 5 - game->sand;
+			game->animation = 1;
 		game->map[y][x] = 'B';
 		game->map[y][x + 1] = 'P';
 		if (game->backwards_x && game->backwards_y)
@@ -118,6 +124,8 @@ void	move_r(t_game *game)
 		put_whatever(game, game->backwards_y, game->backwards_x);
 		game->backwards_x = x;
 		game->backwards_y = y;
+		if (game->animation == 1)
+			play_animation(game);
 	}
 	else if (game->map[y][x + 1] == 'E')
 	{

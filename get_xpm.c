@@ -1,15 +1,24 @@
-#include "so_long.h"
+#include "mot.h"
 
-int	get_sprites(t_game *game)
+int	get_doors(t_game *game)
 {
-	int	x;
-	int	y;
+	int	ox;
+	int	oy;
+	int	cx;
+	int	cy;
 
-	x = 64;
-	y = 60;
+	ox = 64;
+	oy = 60;
+
+	cx = 64;
+	cy = 72;
 	game->o_door = mlx_xpm_file_to_image(game->init,
-		"sprites/o_door.xpm", &x, &y);
+		"sprites/o_door.xpm", &ox, &oy);
 	if (!game->o_door)
+		return (1);
+	game->c_door = mlx_xpm_file_to_image(game->init,
+		"sprites/c_door.xpm", &cx, &cy);
+	if (!game->c_door)
 		return (1);
 	return (0);
 }
@@ -55,6 +64,16 @@ int	get_background(t_game *game)
 		"sprites/background.xpm", &x, &y);
 	if (!game->background)
 		return (1);
+	return (0);
+}
+
+int	get_collect(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 64;
+	y = 72;
 	game->turner = mlx_xpm_file_to_image(game->init,
 		"sprites/turner.xpm", &x, &y);
 	if (!game->turner)
@@ -62,10 +81,6 @@ int	get_background(t_game *game)
 	game->key = mlx_xpm_file_to_image(game->init,
 		"sprites/key.xpm", &x, &y);
 	if (!game->key)
-		return (1);
-	game->c_door = mlx_xpm_file_to_image(game->init,
-		"sprites/c_door.xpm", &x, &y);
-	if (!game->c_door)
 		return (1);
 	return (0);
 }
@@ -92,14 +107,38 @@ int	get_walls(t_game *game)
 	return (0);
 }
 
+int	get_animation(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 64;
+	y = 72;
+	game->flip[0] = mlx_xpm_file_to_image(game->init,
+			"sprites/flip0.xpm", &x, &y);
+	game->flip[1] = mlx_xpm_file_to_image(game->init,
+			"sprites/flip1.xpm", &x, &y);
+	game->flip[2] = mlx_xpm_file_to_image(game->init,
+			"sprites/flip2.xpm", &x, &y);
+	game->flip[3] = mlx_xpm_file_to_image(game->init,
+			"sprites/flip3.xpm", &x, &y);
+	game->flip[4] = mlx_xpm_file_to_image(game->init,
+			"sprites/flip4.xpm", &x, &y);
+	game->flip[5] = mlx_xpm_file_to_image(game->init,
+			"sprites/flip5.xpm", &x, &y);
+	return (0);
+}
+
 int	get_xpm(t_game *game)
 {
 	int	i;
 
 	i = 0;
-	i += get_walls(game);
-	i += get_background(game);
+	i += get_doors(game);
 	i += get_player(game);
-	i += get_sprites(game);
+	i += get_background(game);
+	i += get_collect(game);
+	i += get_walls(game);
+	i += get_animation(game);
 	return (i);
 }

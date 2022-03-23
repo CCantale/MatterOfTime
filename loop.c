@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "mot.h"
 
 void	put_background(t_game *game)
 {
