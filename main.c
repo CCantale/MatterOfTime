@@ -2,6 +2,11 @@
 
 void	main_menu(t_game *game)
 {
+	if (game->music == 0)
+	{
+		playMusic("ost.wav", 90);
+		game->music = 1;
+	}
 	game->start = 2;
 	mlx_clear_window(game->init, game->win);
 	if (game->menu == 0)
@@ -67,6 +72,8 @@ int	main(void)
 	}
 	SDL_Init(SDL_INIT_AUDIO);
 	initAudio();
+//	game->animation = 0;
+//	game->intro = 0;
 	intro(game);
 	mlx_key_hook(game->win, get_key, game);
 	mlx_loop_hook(game->init, update, game);

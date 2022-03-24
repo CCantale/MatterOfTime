@@ -2,11 +2,8 @@
 
 void	quit(t_game *game)
 {
-	if (game->base)
-	{
+	if (game->music)
 		endAudio();
-		freeAudio(game->base);
-	}
 	free(game);
 	exit(0);
 }

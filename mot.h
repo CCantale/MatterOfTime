@@ -20,7 +20,7 @@ typedef struct game
 	int		menu;
 	int		level;
 	int		time;
-	Audio	*base;
+	int		music;
 	char	**map;
 	int		map_x;
 	int		map_y;
