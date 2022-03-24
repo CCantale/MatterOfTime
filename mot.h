@@ -8,6 +8,7 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 # include "keys_and_mlx.h"
+# include "audio.h"
 
 typedef struct game
 {
@@ -19,6 +20,7 @@ typedef struct game
 	int		menu;
 	int		level;
 	int		time;
+	Audio	*base;
 	char	**map;
 	int		map_x;
 	int		map_y;

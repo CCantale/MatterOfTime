@@ -65,6 +65,8 @@ int	main(void)
 		quit(game);
 		return (error_int("Window doesn't init\n"));
 	}
+	SDL_Init(SDL_INIT_AUDIO);
+	initAudio();
 	intro(game);
 	mlx_key_hook(game->win, get_key, game);
 	mlx_loop_hook(game->init, update, game);
