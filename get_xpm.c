@@ -2,22 +2,22 @@
 
 int	get_doors(t_game *game)
 {
-	int	ox;
-	int	oy;
-	int	cx;
-	int	cy;
+	int	x;
+	int	y;
 
-	ox = 64;
-	oy = 60;
+	x = 64;
+	y = 60;
 
-	cx = 64;
-	cy = 72;
 	game->o_door = mlx_xpm_file_to_image(game->init,
-		"sprites/o_door.xpm", &ox, &oy);
+		"sprites/o_door.xpm", &x, &y);
 	if (!game->o_door)
 		return (1);
 	game->c_door = mlx_xpm_file_to_image(game->init,
-		"sprites/c_door.xpm", &cx, &cy);
+		"sprites/c_door.xpm", &x, &y);
+	if (!game->c_door)
+		return (1);
+	game->c_door_base = mlx_xpm_file_to_image(game->init,
+		"sprites/c_door_base.xpm", &x, &y);
 	if (!game->c_door)
 		return (1);
 	return (0);
@@ -38,9 +38,9 @@ int	get_player(t_game *game)
 	game->player[2] = mlx_xpm_file_to_image(game->init,
 		"sprites/time2.xpm", &x, &y);
 	game->player[3] = mlx_xpm_file_to_image(game->init,
-		"sprites/time3.xpm", &x, &y);
+		"sprites/time3r.xpm", &x, &y);
 	game->player[4] = mlx_xpm_file_to_image(game->init,
-		"sprites/time4.xpm", &x, &y);
+		"sprites/time4r.xpm", &x, &y);
 	game->player[5] = mlx_xpm_file_to_image(game->init,
 		"sprites/time5.xpm", &x, &y);
 	i = 0;
@@ -76,6 +76,10 @@ int	get_collect(t_game *game)
 	y = 72;
 	game->turner = mlx_xpm_file_to_image(game->init,
 		"sprites/turner.xpm", &x, &y);
+	if (!game->turner)
+		return (1);
+	game->jumper = mlx_xpm_file_to_image(game->init,
+		"sprites/jumper.xpm", &x, &y);
 	if (!game->turner)
 		return (1);
 	game->key = mlx_xpm_file_to_image(game->init,
@@ -129,6 +133,26 @@ int	get_animation(t_game *game)
 	return (0);
 }
 
+int	get_title(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 166;
+	y = 48;
+	game->title[0] = mlx_xpm_file_to_image(game->init,
+			"sprites/title0.xpm", &x, &y);
+	game->title[1] = mlx_xpm_file_to_image(game->init,
+			"sprites/title1.xpm", &x, &y);
+	game->title[2] = mlx_xpm_file_to_image(game->init,
+			"sprites/title2.xpm", &x, &y);
+	game->title[3] = mlx_xpm_file_to_image(game->init,
+			"sprites/title3.xpm", &x, &y);
+	game->title[4] = mlx_xpm_file_to_image(game->init,
+			"sprites/title4.xpm", &x, &y);
+	return (0);
+}
+
 int	get_xpm(t_game *game)
 {
 	int	i;
@@ -140,5 +164,6 @@ int	get_xpm(t_game *game)
 	i += get_collect(game);
 	i += get_walls(game);
 	i += get_animation(game);
+	i += get_title(game);
 	return (i);
 }

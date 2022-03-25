@@ -1,7 +1,7 @@
 /* XPM */
 static char *e7e121b3506f4bc2a0d1c38d58780bb4aPugKLde9N8tk5e5[] = {
 /* columns rows colors chars-per-pixel */
-"64 72 187 2 ",
+"64 60 187 2 ",
 "   c #311B0E",
 ".  c #381E0D",
 "X  c #2C1C13",
@@ -190,18 +190,6 @@ static char *e7e121b3506f4bc2a0d1c38d58780bb4aPugKLde9N8tk5e5[] = {
 ".X c #A4A9A2",
 "XX c #A4A9A3",
 /* pixels */
-"s.s.s.s.s.s.s.s.f.s.f.s.s.s.s.s.w.w.r.r.9.9.s.r.r.r.r.r.9.E.9.s.s.s.w.r.r.r.r.r.s.r.9.E.s.w.w.r.r.s.s.s.d.r.d.r.d.r.d.r.d.r.d.r.",
-"s.s.s.f.s.f.s.s.s.s.s.s.s.s.s.s.r.E.r.r.9.E.r.E.s.r.r.r.r.h.s.R.h.9.h.t.s.r.r.E.E.s.s.9.s.r.w.r.r.s.s.s.r.d.r.d.r.d.r.d.r.d.r.d.",
-"f.s.s.s.s.s.s.f.s.f.s.s.s.s.s.r.r.r.r.s.s.h.s.9.r.s.r.9.9.9.9.0.h.9.0.R.r.E.r.r.s.9.s.s.E.9.E.r.r.h.s.s.d.r.d.r.d.r.d.r.d.r.d.r.",
-"s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.r.r.s.s.s.9.9.E.s.t.t.R.Q.9.0.Q.9.h.9.9.9.s.r.9.E.9.h.9.r.r.w.r.s.s.s.s.r.d.r.d.r.d.r.d.r.d.r.d.",
-"s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.E.r.s.s.9.s.9.s.s.9.E.h.s.9.9.9.Q.9.h.9.9.E.9.h.E.h.9.s.s.s.s.E.s.s.d.r.d.r.d.r.d.r.d.r.d.r.d.r.",
-"s.s.s.f.f.s.s.s.s.s.f.s.s.f.s.s.s.s.s.s.h.s.s.9.9.s.9.9.h.9.s.9.9.9.s.9.s.9.s.s.9.9.s.s.s.s.s.s.s.s.r.d.r.d.r.d.r.d.r.d.r.d.r.d.",
-"s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.f.h.s.s.s.r.s.w.s.E.E.r.r.w.s.W.w.t.t.r.r.s.r.s.r.r.r.w.s.s.s.s.9.s.h.f.r.d.r.d.r.d.r.d.r.d.r.d.r.",
-"f.s.s.s.s.s.s.f.f.s.s.f.s.s.s.s.9.s.s.s.s.w.s.r.t.s.s.w.w.w.w.w.{.t.w.w.E.w.E.9.s.w.s.t.s.s.s.h.s.s.r.f.r.d.s.f.r.d.r.d.r.d.r.d.",
-"s.f.s.s.s.s.s.s.s.s.s.s.s.s.f.s.9.s.s.s.t.t.w.w.t.t.t.W.t.w.[.}.}.[.t.t.r.s.t.r.p.w.w.r.f.r.d.9.d.r.d.r.s.s.s.f.d.r.d.r.d.r.d.r.",
-"s.s.s.s.f.s.s.s.s.s.f.s.s.s.s.s.h.s.s.s.w.w.w.w.f.f.0.9.s.w.6.6.w.6.r.s.d.0.d.d.r.w.w.w.r.f.9.9.f.d.r.d.s.s.s.s.r.d.r.d.r.d.r.d.",
-"s.s.f.s.s.s.s.f.s.s.s.s.s.s.s.s.d.9.f.w.w.[.t.f.h.0.8.Y.z.z.h.h.h.h.h.z.Y.z.z.8.f.r.w.w.r.r.d.d.r.d.f.r.f.r.s.s.d.r.d.r.d.r.d.r.",
-"s.s.s.s.s.s.s.s.s.f.s.s.s.s.f.s.s.f.s.p.w.t.f.0.3.3.B.M.M.B.3.3.3.3.B.M.M.B.G.0.d.f.p.w.p.f.r.r.d.r.r.f.r.f.s.s.r.d.r.d.r.d.r.d.",
 "f.s.s.s.s.s.f.s.s.s.s.s.s.s.s.s.f.f.y.p.t.s.h.I.@.o.O.[ [ { [ [ O.[ [ [ [ O.o.@.3.d.s.t.t.y.f.f.r.d.r.d.s.s.h.s.d.r.d.r.d.r.d.r.",
 "s.s.f.s.s.s.s.s.s.f.s.s.s.f.s.s.f.t.p.p.s.9.0.D.o./ ` E T T ~ ~ ~ ~ T T E ` [ ] 3.0.9.w.t.{.y.f.d.r.d.r.s.s.s.f.r.d.r.d.r.d.r.d.",
 "f.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.t.v.{.t.t.0.0.S.O.} E W R R W W W R R R W W | [ S.3.h.s.y.t.t.h.r.f.r.d.s.s.r.9.d.r.f.r.d.r.d.r.",

@@ -2,8 +2,8 @@
 # define MOT_H
 
 # define GAME_NAME	"Matter of Time"
-# define WINDOW_X	640	
-# define WINDOW_Y	780
+# define WINDOW_X	670	
+# define WINDOW_Y	790
 
 # include <fcntl.h>
 # include "libft/libft.h"
@@ -16,6 +16,7 @@ typedef struct game
 	void	*win;
 	int		start;
 	int		intro;
+	int		end;
 	int		warning;
 	int		menu;
 	int		level;
@@ -34,12 +35,15 @@ typedef struct game
 	int		backwards_y;
 	int		sand;
 	void	*flip[6];
+	void	*title[5];
 	void	*out_block;
 	void	*s_block;
 	void	*t_block;
 	void	*o_door;
 	void	*c_door;
+	void	*c_door_base;
 	void	*turner;
+	void	*jumper;
 	void	*key;
 	void	*background;
 }	t_game;
@@ -57,5 +61,7 @@ void	get_level(t_game *game);
 void	main_menu(t_game *game);
 void	intro(t_game *game);
 void	play_animation(t_game *game);
+void	ft_open_door(t_game *game);
+void	win(t_game *game);
 
 #endif

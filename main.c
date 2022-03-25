@@ -9,15 +9,14 @@ void	main_menu(t_game *game)
 	}
 	game->start = 2;
 	mlx_clear_window(game->init, game->win);
+	mlx_put_image_to_window(game->init, game->win, game->title[0], 71, 10); 
 	if (game->menu == 0)
 	{
-		mlx_string_put(game->init, game->win, 250, 250, 0xFFFFFF, "MATTER OF TIME");
 		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "> Play");
 		mlx_string_put(game->init, game->win, 300, 380, 0xFFFFFF, "Exit");
 	}
 	else if (game->menu == 1)
 	{
-		mlx_string_put(game->init, game->win, 250, 250, 0xFFFFFF, "MATTER OF TIME");
 		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "Play");
 		mlx_string_put(game->init, game->win, 300, 380, 0xFFFFFF, "> Exit");
 	}
@@ -48,7 +47,7 @@ int	get_key(int key, t_game *game)
 		game->start = 2;
 		main_menu(game);
 	}
-	if (key == KEY_ESC)
+	if (key == KEY_ESC || (game->end == 1 && key == ENTER))
 		quit(game);
 	return (0);
 }
@@ -72,8 +71,6 @@ int	main(void)
 	}
 	SDL_Init(SDL_INIT_AUDIO);
 	initAudio();
-//	game->animation = 0;
-//	game->intro = 0;
 	intro(game);
 	mlx_key_hook(game->win, get_key, game);
 	mlx_loop_hook(game->init, update, game);

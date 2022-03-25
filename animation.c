@@ -21,6 +21,7 @@ void	play_animation(t_game *game)
 	{
 		game->sand = 5 - game->sand;
 		put_whatever(game, game->player_y, game->player_x);
+		mlx_put_image_to_window(game->init, game->win, game->title[game->sand], 71, 10);
 		game->animation = 0;
 	}
 }

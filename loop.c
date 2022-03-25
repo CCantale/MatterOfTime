@@ -35,8 +35,24 @@ void	put_collect(t_game *game, int i, int j)
 		mlx_put_image_to_window(game->init, game->win,
 			game->key, j * 64 + game->x_start, i * 64 + game->y_start);
 	else if (game->map[i][j] == 'J')
+	{
 		mlx_put_image_to_window(game->init, game->win,
-			game->background, j * 64 + game->x_start, i * 64 + game->y_start);
+			game->jumper, j * 64 + game->x_start, i * 64 + game->y_start);
+		if (game->map[i - 1][j] == '1' || game->map[i - 1][j] == 'E')
+			put_whatever(game, i - 1, j);
+		if (game->map[i + 1][j] == '1')
+			put_whatever(game, i + 1, j);
+	}
+}
+
+void put_door(t_game *game, int i, int j)
+{
+	if (game->map[i + 1][j] == '1')
+		mlx_put_image_to_window(game->init, game->win,
+			game->c_door_base, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
+	else
+		mlx_put_image_to_window(game->init, game->win,
+			game->c_door, j * 64 + game->x_start, i * 64 + 8 + game->y_start);
 }
 
 void	put_sprites(t_game *game, int i, int j)
@@ -81,15 +97,16 @@ void	put_whatever(t_game *game, int i, int j)
 				game->out_block, j * 64 + game->x_start, i * 64 + game->y_start);
 	}
 	else if (game->map[i][j] == '1')
+	{
 		mlx_put_image_to_window(game->init, game->win,
 			game->out_block, j * 64 + game->x_start, i * 64 + game->y_start);
-	else if (game->map[i][j] == 'D')
-		mlx_put_image_to_window(game->init, game->win,
-			game->c_door, j * 64 + game->x_start, i * 64 + game->y_start);
+	}
+	else if (game->map[i][j] == '2' || game->map[i][j] == 'D')
+		put_door(game, i, j);
 	else
 		put_sprites(game, i, j);
 	if (i && game->start != 0 && game->map[i][j] == '1'
-		&& (game->map[i - 1][j] == '1' || game->map[i - 1][j] == 'E'))
+		&& (game->map[i - 1][j] == '1' || game->map[i - 1][j] == 'E' || game->map[i - 1][j] == 'D'))
 		put_whatever(game, i - 1, j);
 }
 
@@ -118,18 +135,18 @@ int	update(t_game *game)
 	{
 		get_level(game);
 		mlx_clear_window(game->init, game->win);
+		mlx_put_image_to_window(game->init, game->win, game->title[0], 71, 10);
 		put_start(game);
 		game->start = 1;
 		game->sand = 0;
 		game->backwards_x = 0;
 		game->backwards_y = 0;
-		mlx_string_put(game->init, game->win, 30, 5, 0xFFFFFF, "More sand will fall down at every step.");
-		mlx_string_put(game->init, game->win, 30, 35, 0xFFFFFF, "Walk on arrows to turn Time upside down.");
-		mlx_string_put(game->init, game->win, 30, 65, 0xFFFFFF, "No turning animation yet. Sorry.");
+//		mlx_string_put(game->init, game->win, 30, 5, 0xFFFFFF, "More sand will fall down at every step.");
+//		mlx_string_put(game->init, game->win, 30, 35, 0xFFFFFF, "Walk on arrows to turn Time upside down.");
 	}
 	if (game->warning == 1)
 	{
-		mlx_string_put(game->init, game->win, 80, 730, 0xFFFFFF, "Time never walks backwards!");
+		mlx_string_put(game->init, game->win, 80, 40, 0xFFFFFF, "Time never walks backwards!");
 		game->warning++;
 	}
 	else if (game->warning > 1)
@@ -139,10 +156,10 @@ int	update(t_game *game)
 		else
 		{
 			game->warning = 0;
-		mlx_string_put(game->init, game->win, 80, 730, 0x000000, "Time never walks backwards!");
+		mlx_string_put(game->init, game->win, 80, 40, 0x000000, "Time never walks backwards!");
 		}
 	}
-	if (game->start != 2 && game->sand >=5 && game->animation == 0)
+	if (game->start != 2 && game->sand >= 5 && game->animation == 0)
 	{
 		game->warning = 0;
 		main_menu(game);

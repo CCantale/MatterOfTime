@@ -58,8 +58,8 @@ re:
 	make
 
 send:
-	rm -r ../so_linux/*.c ../so_linux/so_long.h ../so_linux/sprites
-	cp -r *.c so_long.h sprites ../so_linux
+	rm -r ../so_linux/*.c ../so_linux/mot.h ../so_linux/sprites
+	cp -r *.c mot.h sprites ../so_linux
 
 .PHONY: all clean fclean re send
 
