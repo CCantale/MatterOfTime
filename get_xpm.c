@@ -150,6 +150,8 @@ int	get_title(t_game *game)
 			"sprites/title3.xpm", &x, &y);
 	game->title[4] = mlx_xpm_file_to_image(game->init,
 			"sprites/title4.xpm", &x, &y);
+	game->ending = mlx_xpm_file_to_image(game->init,
+			"sprites/ending.xpm", &x, &y);
 	return (0);
 }
 

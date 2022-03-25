@@ -36,6 +36,7 @@ typedef struct game
 	int		sand;
 	void	*flip[6];
 	void	*title[5];
+	void	*ending;
 	void	*out_block;
 	void	*s_block;
 	void	*t_block;

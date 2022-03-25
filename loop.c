@@ -134,15 +134,20 @@ int	update(t_game *game)
 	if (game->start == 0)
 	{
 		get_level(game);
-		mlx_clear_window(game->init, game->win);
-		mlx_put_image_to_window(game->init, game->win, game->title[0], 71, 10);
-		put_start(game);
-		game->start = 1;
-		game->sand = 0;
-		game->backwards_x = 0;
-		game->backwards_y = 0;
-//		mlx_string_put(game->init, game->win, 30, 5, 0xFFFFFF, "More sand will fall down at every step.");
-//		mlx_string_put(game->init, game->win, 30, 35, 0xFFFFFF, "Walk on arrows to turn Time upside down.");
+		if (game->start == 4)
+			main_menu(game);
+		else
+		{
+			mlx_clear_window(game->init, game->win);
+			mlx_put_image_to_window(game->init, game->win, game->title[0], 71, 10);
+			put_start(game);
+			game->start = 1;
+			game->sand = 0;
+			game->backwards_x = 0;
+			game->backwards_y = 0;
+//			mlx_string_put(game->init, game->win, 30, 5, 0xFFFFFF, "More sand will fall down at every step.");
+//			mlx_string_put(game->init, game->win, 30, 35, 0xFFFFFF, "Walk on arrows to turn Time upside down.");
+		}
 	}
 	if (game->warning == 1)
 	{

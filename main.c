@@ -7,18 +7,28 @@ void	main_menu(t_game *game)
 		playMusic("ost.wav", 90);
 		game->music = 1;
 	}
-	game->start = 2;
 	mlx_clear_window(game->init, game->win);
-	mlx_put_image_to_window(game->init, game->win, game->title[0], 71, 10); 
-	if (game->menu == 0)
+	if (game->start != 4)
 	{
-		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "> Play");
-		mlx_string_put(game->init, game->win, 300, 380, 0xFFFFFF, "Exit");
+		game->start = 2;
+		mlx_put_image_to_window(game->init, game->win, game->title[0], 71, 10); 
+		if (game->menu == 0)
+		{
+			mlx_string_put(game->init, game->win, 270, 340, 0xFFFFFF, "> Play");
+			mlx_string_put(game->init, game->win, 270, 380, 0xFFFFFF, "Exit");
+		}
+		else if (game->menu == 1)
+		{
+			mlx_string_put(game->init, game->win, 270, 340, 0xFFFFFF, "Play");
+			mlx_string_put(game->init, game->win, 270, 380, 0xFFFFFF, "> Exit");
+		}
 	}
-	else if (game->menu == 1)
+	else
 	{
-		mlx_string_put(game->init, game->win, 300, 340, 0xFFFFFF, "Play");
-		mlx_string_put(game->init, game->win, 300, 380, 0xFFFFFF, "> Exit");
+		mlx_put_image_to_window(game->init, game->win, game->ending, 71, 10);
+		mlx_string_put(game->init, game->win, 270, 340, 0xFFFFFF, "Created by:");
+		mlx_string_put(game->init, game->win, 270, 380, 0xFFFFFF, "        Claudio Cantale");
+		mlx_string_put(game->init, game->win, 500, 740, 0xFFFFFF, "Press ESC to quit");
 	}
 }	
 
@@ -47,7 +57,7 @@ int	get_key(int key, t_game *game)
 		game->start = 2;
 		main_menu(game);
 	}
-	if (key == KEY_ESC || (game->end == 1 && key == ENTER))
+	if (key == KEY_ESC)
 		quit(game);
 	return (0);
 }
