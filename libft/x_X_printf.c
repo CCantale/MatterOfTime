@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   x_X_printf.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ccantale <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 17:56:02 by ccantale          #+#    #+#             */
-/*   Updated: 2022/02/18 15:56:19 by ccantale         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	this_isnt_over(const char *str, int count)
 {
@@ -18,7 +6,7 @@ static int	this_isnt_over(const char *str, int count)
 	int	minus;
 
 	i = 0;
-	minus = atoi(str + 1);
+	minus = ft_atoi(str + 1);
 	if (str[0] == '-')
 		while (minus-- - count > 0)
 			i += write(1, " ", 1);

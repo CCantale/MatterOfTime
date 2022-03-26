@@ -129,7 +129,7 @@ void	get_level(t_game *game)
 		level6(game);
 	else
 	{
-		game->start = 4;
+		game->start = 3;
 	}
 	game->x_start = (WINDOW_X - (game->map_x * 64)) / 2;
 	game->sand = 0;	

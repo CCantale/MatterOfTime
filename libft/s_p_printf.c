@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   c_s.c                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ccantale <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 02:20:18 by ccantale          #+#    #+#             */
-/*   Updated: 2022/02/18 15:58:08 by ccantale         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	dont_let_that_nulls_terminate_you_boy(const char *str,
 		char **s, char **check, int *i)

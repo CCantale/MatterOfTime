@@ -134,7 +134,7 @@ int	update(t_game *game)
 	if (game->start == 0)
 	{
 		get_level(game);
-		if (game->start == 4)
+		if (game->start == 3)
 			main_menu(game);
 		else
 		{
