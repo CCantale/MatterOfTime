@@ -155,6 +155,54 @@ int	get_title(t_game *game)
 	return (0);
 }
 
+int	get_menu(t_game *game)
+{
+	int	zero_x;
+	int	zero_y;
+	int	one_x;
+	int	one_y;
+
+	zero_x = 112;
+	zero_y = 72;
+	one_x = 112;
+	one_y = 68;
+	game->menu_img[0] = mlx_xpm_file_to_image(game->init,
+			"sprites/menu0.xpm", &zero_x, &zero_y);
+	game->menu_img[1] = mlx_xpm_file_to_image(game->init,
+			"sprites/menu1.xpm", &one_x, &one_y);
+	game->the_end = mlx_xpm_file_to_image(game->init,
+			"sprites/the_end.xpm", &one_x, &one_y);
+	return (0);
+}
+
+int	get_credits(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 70;
+	y = 70;
+	game->credits = mlx_xpm_file_to_image(game->init,
+			"sprites/credits.xpm", &x, &y);
+	if (!game->credits)
+		return (1);
+	return (0);
+}
+
+int	get_warning(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 242;
+	y = 91;
+	game->warning_img = mlx_xpm_file_to_image(game->init,
+			"sprites/warning.xpm", &x, &y);
+	if (!game->warning_img)
+		return (1);
+	return (0);
+}
+
 int	get_xpm(t_game *game)
 {
 	int	i;
@@ -167,5 +215,8 @@ int	get_xpm(t_game *game)
 	i += get_walls(game);
 	i += get_animation(game);
 	i += get_title(game);
+	i += get_menu(game);
+	i += get_credits(game);
+	i += get_warning(game);
 	return (i);
 }

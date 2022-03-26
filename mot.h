@@ -35,7 +35,8 @@ typedef struct game
 	int		sand;
 	void	*flip[6];
 	void	*title[5];
-	void	*ending;
+	void	*menu_img[2];
+	void	*warning_img;
 	void	*out_block;
 	void	*s_block;
 	void	*t_block;
@@ -46,6 +47,9 @@ typedef struct game
 	void	*jumper;
 	void	*key;
 	void	*background;
+	void	*ending;
+	void	*the_end;
+	void	*credits;
 }	t_game;
 
 char	**ft_check_map(t_game *game, char *path);
@@ -59,7 +63,12 @@ void	move(t_game *game, int key);
 int	scan_for_coll(char **map);
 void	get_level(t_game *game);
 void	main_menu(t_game *game);
+void	intro(t_game *game);
 void	play_animation(t_game *game);
 void	ft_open_door(t_game *game);
+void	win(t_game *game);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+char	**ft_split(char const *s, char c);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif

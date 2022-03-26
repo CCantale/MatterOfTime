@@ -151,18 +151,8 @@ int	update(t_game *game)
 	}
 	if (game->warning == 1)
 	{
-		mlx_string_put(game->init, game->win, 80, 40, 0xFFFFFF, "Time never walks backwards!");
-		game->warning++;
-	}
-	else if (game->warning > 1)
-	{
-		if (game->warning < 25000)
-			game->warning++;
-		else
-		{
-			game->warning = 0;
-		mlx_string_put(game->init, game->win, 80, 40, 0x000000, "Time never walks backwards!");
-		}
+		mlx_put_image_to_window(game->init, game->win, game->warning_img, 71, 10);
+		game->warning = 0;
 	}
 	if (game->start != 2 && game->sand >= 5 && game->animation == 0)
 	{
