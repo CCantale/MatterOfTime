@@ -10,24 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC			= gcc
-FLAGS		= -Wall -Wextra -Werror
+CC	=	gcc
+FLAGS	=	-Wall -Wextra -Werror
 
-NAME		= so_long
+NAME	=	MatterOfTime
 
-FILES		= so_long.c \
-			  quit.c \
-			  error.c \
-			  loop.c \
-			  get_xpm.c \
-			  move.c \
-			  get_level.c \
-			  intro.c
+FILES	=	main.c \
+		quit.c \
+		error.c \
+		loop.c \
+		get_xpm.c \
+		move.c \
+		levels.c \
+		animation.c \
+		ft_open_door.c
 
-LIBFT		= libft/libft.a
-MINI		= minilibX/libmlx.dylib
+LIBFT	=	libft/libft.a
+MINI	=	minilibX/libmlx.dylib
 
-OBJ			= $(FILES:.c=.o)
+OBJ	=	$(FILES:.c=.o)
 
 
 all: $(LIBFT) $(MINI) $(NAME)
@@ -39,27 +40,23 @@ $(LIBFT): libft/
 	make -C libft
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -g $(OBJ) -lmlx -framework OpenGL -framework AppKit $(LIBFT) -o so_long
+	$(CC) $(FLAGS) $(OBJ) -lmlx -lSDL2main -lSDL2 -framework OpenGL -framework AppKit $(LIBFT) -o $(NAME)
 
 %.o: %.c
+	$(CC) -c audio.c
 	$(CC) $(FLAGS) -c $(FILES)
 
 clean: 
-	make clean -C libft
+	make clean -C minilibX
+	make fclean -C libft
 	rm $(OBJ)
 
 fclean: clean
-	make clean -C minilibX
-	make fclean -C libft
-	rm so_long
+	rm $(NAME)
 
 re: 
-	rm so_long
+	rm $(NAME)
 	make
 
-send:
-	rm -r ../so_linux/*.c ../so_linux/mot.h ../so_linux/sprites
-	cp -r *.c mot.h sprites ../so_linux
-
-.PHONY: all clean fclean re send
+.PHONY: all clean fclean re
 
