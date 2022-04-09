@@ -13,7 +13,7 @@ void	ft_open_door(t_game *game)
 		{
 			if (game->map[i][j] == 'D')
 			{	
-				playSound("music/door.wav", SDL_MIX_MAXVOLUME);
+//				playSound("music/door.wav", SDL_MIX_MAXVOLUME);
 				game->map[i][j] = 'E';
 				put_whatever(game, i, j);
 				break ;

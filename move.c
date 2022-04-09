@@ -22,7 +22,7 @@ void	move_u(t_game *game)
 			mlx_put_image_to_window(game->init, game->win, game->title[game->sand], 71, 10);
 		if (*next == 'J' && game->map[y][x + 3] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y - 3][x] = 'P';
@@ -31,7 +31,7 @@ void	move_u(t_game *game)
 		}
 		else if (*next == 'J' && game->map[y - 2][x] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y - 2][x] = 'P';
@@ -52,7 +52,7 @@ void	move_u(t_game *game)
 	{
 		game->level++;
 		game->start = 0;
-		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
+//		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
 	}
 	else if (*next == 'B')
 		game->warning = 1;
@@ -80,7 +80,7 @@ void	move_d(t_game *game)
 			mlx_put_image_to_window(game->init, game->win, game->title[game->sand], 71, 10);
 		if (*next == 'J' && game->map[y + 3][x] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y + 3][x] = 'P';
@@ -89,7 +89,7 @@ void	move_d(t_game *game)
 		}
 		else if (*next == 'J' && game->map[y + 2][x] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y + 2][x] = 'P';
@@ -110,7 +110,7 @@ void	move_d(t_game *game)
 	{
 		game->level++;
 		game->start = 0;
-		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
+//		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
 	}
 	else if (*next == 'B')
 		game->warning = 1;
@@ -138,7 +138,7 @@ void	move_l(t_game *game)
 			mlx_put_image_to_window(game->init, game->win, game->title[game->sand], 71, 10);
 		if (*next == 'J' && game->map[y][x - 3] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y][x - 3] = 'P';
@@ -147,7 +147,7 @@ void	move_l(t_game *game)
 		}
 		else if (*next == 'J' && game->map[y][x - 2] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y][x - 2] = 'P';
@@ -168,7 +168,7 @@ void	move_l(t_game *game)
 	{
 		game->level++;
 		game->start = 0;
-		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
+//		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
 	}
 	else if (*next == 'B')
 		game->warning = 1;
@@ -196,7 +196,7 @@ void	move_r(t_game *game)
 			mlx_put_image_to_window(game->init, game->win, game->title[game->sand], 71, 10);
 		if (*next == 'J' && game->map[y][x + 3] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y][x + 3] = 'P';
@@ -205,7 +205,7 @@ void	move_r(t_game *game)
 		}
 		else if (*next == 'J' && game->map[y][x + 2] != '1')
 		{
-			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
+//			playSound("music/jump.wav", SDL_MIX_MAXVOLUME);
 			game->map[y][x] = ' ';
 			*next = ' ';
 			game->map[y][x + 2] = 'P';
@@ -226,7 +226,7 @@ void	move_r(t_game *game)
 	{
 		game->level++;
 		game->start = 0;
-		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
+//		playSound("music/vortex.wav", SDL_MIX_MAXVOLUME - 30);
 			
 	}
 	else if (*next == 'B')

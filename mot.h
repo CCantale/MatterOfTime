@@ -7,7 +7,6 @@
 
 # include "libft/libft.h"
 # include "keys_and_mlx.h"
-# include "audio.h"
 
 typedef struct game
 {
@@ -53,14 +52,14 @@ typedef struct game
 }	t_game;
 
 char	**ft_check_map(t_game *game, char *path);
-int	quit(t_game *game);
+int		quit(t_game *game);
 void	*error_msg(char *msg);
-int	error_int(char *msg);
-int	update(t_game *game);
-int	get_xpm(t_game *game);
+int		error_int(char *msg);
+int		update(t_game *game);
+int		get_xpm(t_game *game);
 void	put_whatever(t_game *game, int i, int j);
 void	move(t_game *game, int key);
-int	scan_for_coll(char **map);
+int		scan_for_coll(char **map);
 void	get_level(t_game *game);
 void	main_menu(t_game *game);
 void	intro(t_game *game);
