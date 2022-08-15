@@ -61,6 +61,7 @@ void	put_whatever(t_game *game, int i, int j);
 void	move(t_game *game, int key);
 int		scan_for_coll(char **map);
 void	get_level(t_game *game);
+void	free_lvl(char **map, int rows);
 void	main_menu(t_game *game);
 void	intro(t_game *game);
 void	play_animation(t_game *game);

@@ -157,6 +157,7 @@ int	update(t_game *game)
 	if (game->start != 2 && game->sand >= 5 && game->animation == 0)
 	{
 		game->warning = 0;
+		free_lvl(game->map, game->map_y);
 		main_menu(game);
 	}
 	if (game->animation > 0 || game->animation == -1)
