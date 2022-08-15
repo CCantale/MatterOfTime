@@ -6,7 +6,7 @@
 #    By: ccantale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 15:39:12 by ccantale          #+#    #+#              #
-#    Updated: 2022/04/09 16:10:02 by ccantale         ###   ########.fr        #
+#    Updated: 2022/08/15 02:59:55 by ccantale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,11 +46,11 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -c $(FILES)
 
 clean: 
-	make clean -C minilibX
-	make fclean -C libft
 	rm $(OBJ)
 
 fclean: clean
+	make clean -C minilibX
+	make fclean -C libft
 	rm $(NAME)
 
 re: 
