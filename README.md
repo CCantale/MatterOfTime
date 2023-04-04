@@ -5,7 +5,7 @@ Small 2D puzzle game about getting an hourglass to the other side of a map, tryi
 Time never walks backwards, 
 it only goes back to the very beginning... ⌛
 
-![MoT Screen](https://user-images.githubusercontent.com/95633668/200099438-c90ee930-54ec-4572-904c-b0da2daeaf96.jpg
+![MoT Screen](https://user-images.githubusercontent.com/95633668/200099438-c90ee930-54ec-4572-904c-b0da2daeaf96.jpg)
 
 # How To Play
 
