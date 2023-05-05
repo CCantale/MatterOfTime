@@ -12,4 +12,5 @@ it only goes back to the very beginning... ⌛
 # Compatibility
 
 Unfortunately, MinilibX is not compatible with Windows, so I could only provide a Mac and Linux version.
+
 Just download and run the executable in the corresponding folder.
